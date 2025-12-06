@@ -1,4 +1,4 @@
-package com.titoodev.myfirstapp
+package com.titoodev.myfirstapp.sintaxis
 // este es el primer archivo que creamos.
 // lo creamos de tipo "file", porque es de los archivos mas "simples" para trabajar
 
