@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">MyFirstApp</string>
+    <string name="nombre">Escribe tu nombre!!</string>
+    <string name="nombreInput">Escribe tu nombre aqui!!</string>
+    <string name="button">Click aca!!</string>
+    <string name="h1name">h1</string>
+    <string name="title"> </string>
+    <string name="wave1">Ir al menu principal</string>
+    <string name="wave2">Ir a una nueva app</string>
 </resources>
