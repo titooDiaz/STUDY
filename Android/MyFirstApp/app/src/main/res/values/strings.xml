@@ -10,4 +10,8 @@
     <string name="male">Masculino</string>
     <string name="female">Femenino</string>
     <string name="height">Selecciona tu altura!!</string>
+    <string name="edad">Selecciona tu edad</string>
+    <string name="peso">Selecciona tu masa</string>
+    <string name="todo">TODO</string>
+    <string name="peso_numero">60</string>
 </resources>

@@ -112,7 +112,7 @@
                 android:textAllCaps="true"
                 tools:ignore="TextContrastCheck"
                 android:textColor="@color/white"
-                android:textSize="20sp">
+                android:textSize="15sp">
             </TextView>
             <TextView
                 android:layout_width="wrap_content"
@@ -123,8 +123,152 @@
                 android:id="@+id/number"
                 android:textSize="20sp">
             </TextView>
+            <com.google.android.material.slider.RangeSlider
+                android:id="@+id/slider"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:valueFrom="100"
+                android:valueTo="200"
+                android:stepSize="1"
+
+                app:trackColorActive="@color/orange_dark"
+                app:trackColorInactive="@color/orange_dark"
+                app:thumbColor="@color/orange_dark"
+                app:haloColor="@color/purple_200"
+                />
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
+    <androidx.cardview.widget.CardView
+        android:layout_marginTop="16dp"
+        android:id="@+id/peso"
+        android:layout_width="0dp"
+        android:layout_height="150dp"
+        android:layout_marginStart="8dp"
+        app:cardBackgroundColor="@color/orange"
+        app:cardCornerRadius="16dp"
+        app:layout_constraintEnd_toEndOf="@+id/height"
+        app:layout_constraintStart_toEndOf="@+id/edad"
+        app:layout_constraintTop_toBottomOf="@+id/height">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical"
+            tools:ignore="UseCompoundDrawables">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/peso"
+                android:textAlignment="center"
+                android:textAllCaps="true"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                tools:ignore="TextContrastCheck">
+            </TextView>
+
+            <TextView
+                android:id="@+id/peso_numero"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:textAllCaps="true"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                tools:ignore="TextContrastCheck">
+            </TextView>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_marginTop="16dp"
+        android:id="@+id/edad"
+        android:layout_width="0dp"
+        android:layout_height="150dp"
+        android:layout_marginEnd="8dp"
+        app:cardBackgroundColor="@color/orange"
+        app:cardCornerRadius="16dp"
+        app:layout_constraintEnd_toStartOf="@+id/peso"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/height"
+        android:gravity="center">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            tools:ignore="UseCompoundDrawables"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/edad"
+                android:textAlignment="center"
+                android:textAllCaps="true"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                tools:ignore="TextContrastCheck">
+            </TextView>
+
+            <TextView
+                android:id="@+id/edad_numerica"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:textAllCaps="true"
+                android:text="@string/peso_numero"
+                android:textColor="@color/white"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                tools:ignore="TextContrastCheck">
+            </TextView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center">
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/upEdad"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:backgroundTint="@color/orange_dark"
+                    android:contentDescription="@string/todo"
+                    android:importantForAccessibility="no"
+
+                    app:borderWidth="0dp"
+
+                    app:rippleColor="@color/white"
+                    tools:ignore="ClassNameCheck,ImageContrastCheck"
+                    android:src="@drawable/up"
+                    app:tint="@color/white">
+
+                </com.google.android.material.floatingactionbutton.FloatingActionButton>
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/downEdad"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:backgroundTint="@color/orange_dark"
+                    android:contentDescription="@string/todo"
+
+                    app:borderWidth="0dp"
+
+                    app:rippleColor="@color/white"
+                    tools:ignore="ClassNameCheck,ImageContrastCheck"
+                    android:src="@drawable/down"
+                    app:tint="@color/white">
+                </com.google.android.material.floatingactionbutton.FloatingActionButton>
+            </LinearLayout>
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
