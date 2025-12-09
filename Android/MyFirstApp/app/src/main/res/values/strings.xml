@@ -7,4 +7,7 @@
     <string name="title"> </string>
     <string name="wave1">Ir al menu principal</string>
     <string name="wave2">Ir a una nueva app</string>
+    <string name="male">Masculino</string>
+    <string name="female">Femenino</string>
+    <string name="height">Selecciona tu altura!!</string>
 </resources>

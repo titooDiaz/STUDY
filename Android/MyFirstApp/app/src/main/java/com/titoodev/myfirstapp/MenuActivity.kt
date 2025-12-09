@@ -7,6 +7,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.titoodev.myfirstapp.IMCAPP.IMCActivity
 import com.titoodev.myfirstapp.primeraApp.PrimeraActivity
 
 class MenuActivity : AppCompatActivity() {
@@ -14,11 +15,6 @@ class MenuActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_menu)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
-        }
 
         // primer menu
         val btnNav = findViewById<Button>(R.id.botonnav)
@@ -34,7 +30,7 @@ class MenuActivity : AppCompatActivity() {
         startActivity(intent)
     }
     fun navergarSaludo2(){
-        val intent = Intent(this, PrimeraActivity::class.java)
+        val intent = Intent(this, IMCActivity::class.java)
         startActivity(intent)
     }
 }
