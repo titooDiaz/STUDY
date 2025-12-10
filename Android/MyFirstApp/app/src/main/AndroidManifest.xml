@@ -13,6 +13,9 @@
         android:theme="@style/Theme.MyFirstApp"
         tools:targetApi="31">
         <activity
+            android:name=".IMCAPP.ResultActivity"
+            android:exported="false" />
+        <activity
             android:name=".IMCAPP.IMCActivity"
             android:exported="false" />
         <activity
@@ -29,7 +32,7 @@
             android:exported="false" />
         <activity
             android:name=".primeraApp.PrimeraActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
 
         <meta-data
             android:name="preloaded_fonts"

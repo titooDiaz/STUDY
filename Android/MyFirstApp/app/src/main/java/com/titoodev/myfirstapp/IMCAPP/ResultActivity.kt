@@ -1,6 +1,7 @@
 package com.titoodev.myfirstapp.IMCAPP
 
 import android.os.Bundle
+import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -17,5 +18,9 @@ class ResultActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+
+        val result = intent.extras?.getFloat("IMC_RESULT")
+        val textVie: TextView = findViewById(R.id.result)
+        textVie.text =result.toString()
     }
 }
