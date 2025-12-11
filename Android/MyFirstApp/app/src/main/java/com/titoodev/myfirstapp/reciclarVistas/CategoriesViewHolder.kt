@@ -1,4 +1,36 @@
 package com.titoodev.myfirstapp.reciclarVistas
 
-class CategoriesViewHolder {
+import android.view.LayoutInflater
+import android.view.View
+import android.widget.TextView
+import androidx.core.content.ContextCompat
+import androidx.recyclerview.widget.RecyclerView
+import com.titoodev.myfirstapp.R
+
+class CategoriesViewHolder(view: View) : RecyclerView.ViewHolder(view){
+    private val tvCategoryBox:TextView = view.findViewById(R.id.categoryName)
+    private val divider:View = view.findViewById(R.id.divider)
+
+    fun render(taskCategory: TaskCategory){
+        when(taskCategory){
+            TaskCategory.Business -> {
+                tvCategoryBox.text = "Negocios"
+                divider.setBackgroundColor(
+                    ContextCompat.getColor(divider.context, R.color.orange_dark)
+                )
+            }
+            TaskCategory.Other -> {
+                tvCategoryBox.text = "Otros"
+                divider.setBackgroundColor(
+                    ContextCompat.getColor(divider.context, R.color.purple_200)
+                )
+            }
+            TaskCategory.Personal -> {
+                tvCategoryBox.text = "Personal"
+                divider.setBackgroundColor(
+                    ContextCompat.getColor(divider.context, R.color.teal_200)
+                )
+            }
+        }
+    }
 }

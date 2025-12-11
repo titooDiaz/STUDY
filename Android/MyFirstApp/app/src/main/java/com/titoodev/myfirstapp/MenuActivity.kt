@@ -9,6 +9,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.titoodev.myfirstapp.IMCAPP.IMCActivity
 import com.titoodev.myfirstapp.primeraApp.PrimeraActivity
+import com.titoodev.myfirstapp.reciclarVistas.ReciclarVistasActivity
 
 class MenuActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -23,6 +24,10 @@ class MenuActivity : AppCompatActivity() {
         // segundo menu
         val btnNav2 = findViewById<Button>(R.id.botonnav2)
         btnNav2.setOnClickListener{navergarSaludo2()}
+
+        // tercer menu
+        val btnNav3 = findViewById<Button>(R.id.botonnav3)
+        btnNav3.setOnClickListener{navergarSaludo3()}
     }
 
     fun navergarSaludo(){
@@ -31,6 +36,11 @@ class MenuActivity : AppCompatActivity() {
     }
     fun navergarSaludo2(){
         val intent = Intent(this, IMCActivity::class.java)
+        startActivity(intent)
+    }
+
+    fun navergarSaludo3(){
+        val intent = Intent(this, ReciclarVistasActivity::class.java)
         startActivity(intent)
     }
 }
