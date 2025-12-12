@@ -1,12 +1,18 @@
 package com.titoodev.myfirstapp.reciclarVistas
 
+import android.app.Dialog
 import android.os.Bundle
+import android.widget.Button
+import android.widget.EditText
+import android.widget.RadioButton
+import android.widget.RadioGroup
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.titoodev.myfirstapp.R
 
 class ReciclarVistasActivity : AppCompatActivity() {
@@ -23,6 +29,9 @@ class ReciclarVistasActivity : AppCompatActivity() {
         Task("Personal", TaskCategory.Personal),
         Task("otros", TaskCategory.Other),
     )
+
+    // boton agregar tareas
+    private lateinit var btnAddTask: FloatingActionButton
 
     // primeras cartas reutilziables
     private lateinit var recyclerBoxvar: RecyclerView
@@ -45,6 +54,7 @@ class ReciclarVistasActivity : AppCompatActivity() {
         // la vista reciclada va a recibir un conjunto de datos
         initComponents()
         initUI()
+        initListeners()
     }
 
     private fun initUI(){
@@ -59,9 +69,43 @@ class ReciclarVistasActivity : AppCompatActivity() {
         taskAdapater = TaskAdapter(tasks)
         recyclerBoxvar2.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
         recyclerBoxvar2.adapter = taskAdapater
+
+        // iniizializar boton
+        btnAddTask = findViewById(R.id.addTask)
+
     }
     private fun initComponents(){
         recyclerBoxvar = findViewById(R.id.recyclerBox)
         recyclerBoxvar2 = findViewById(R.id.recyclerBox2)
+    }
+
+    private fun initListeners(){
+        btnAddTask.setOnClickListener{
+            showDialog()
+        }
+    }
+
+    private fun showDialog(){
+
+        val dialog = Dialog(this)
+        dialog.setContentView(R.layout.dialog_task)
+
+        // elementos relaciondos
+        val inputTask: EditText = dialog.findViewById(R.id.inputTask)
+        val buttonGroup: RadioGroup = dialog.findViewById(R.id.radioGroup)
+        val btnAddNewTask: Button = dialog.findViewById(R.id.btnAddTask)
+
+        btnAddNewTask.setOnClickListener{
+            val selectedId = buttonGroup.checkedRadioButtonId
+            val button:RadioButton = buttonGroup.findViewById(selectedId)
+
+            val currentCategory:TaskCategory = when(button.text){
+                    "negocios"-> TaskCategory.Business
+                    "personal"-> TaskCategory.Personal
+                    else -> TaskCategory.Other
+            }
+        }
+
+        dialog.show()
     }
 }

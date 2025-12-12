@@ -7,7 +7,7 @@ import com.titoodev.myfirstapp.R
 
 class TaskAdapter(private val tasks: MutableList<Task>) : RecyclerView.Adapter<TaskViewHolder>() {
     override fun onBindViewHolder(holder: TaskViewHolder, position: Int) {
-        // crear una vista visual y montar esa vista
+        // crear una vista visual y montar esa vistat
         holder.render(tasks[position])
     }
 

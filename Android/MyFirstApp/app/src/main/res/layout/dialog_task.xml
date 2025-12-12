@@ -1,6 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="250dp"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@color/orange"
+    android:padding="16dp">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/inputTask"
+        android:backgroundTint="@color/white"
+        android:hint="@string/inputTask"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white">
+    </EditText>
+    
+    
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RadioButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/rbBussines"
+            android:text="negocios"
+            android:checked="true"
+            android:textColor="@color/white">
+        </RadioButton>
+
+        <RadioButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/rbPersonal"
+            android:text="personal"
+            android:checked="false"
+            android:textColor="@color/white">
+        </RadioButton>
+
+        <RadioButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/rbOther"
+            android:text="other"
+            android:checked="false"
+            android:textColor="@color/white">
+        </RadioButton>
+
+    </RadioGroup>
+    
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnAddTask"
+        android:text="Crear Tarea"
+        android:backgroundTint="@color/orange_dark">
+
+    </Button>
+
+</LinearLayout>
