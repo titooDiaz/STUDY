@@ -5,10 +5,12 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.titoodev.myfirstapp.R
 
-class TaskAdapter(private val tasks: MutableList<Task>) : RecyclerView.Adapter<TaskViewHolder>() {
+class TaskAdapter(var tasks: List<Task>, private val onTaskSelected: (Int) -> Unit) :
+    RecyclerView.Adapter<TaskViewHolder>() {
     override fun onBindViewHolder(holder: TaskViewHolder, position: Int) {
         // crear una vista visual y montar esa vistat
         holder.render(tasks[position])
+        holder.itemView.setOnClickListener{onTaskSelected(position)}
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TaskViewHolder {

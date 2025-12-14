@@ -5,10 +5,11 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.titoodev.myfirstapp.R
 
-class CategoriesAdapter(private val categories:List<TaskCategory>) : RecyclerView.Adapter<CategoriesViewHolder>() {
+class CategoriesAdapter(private val categories:List<TaskCategory>, private val onItemSelected:(Int) -> Unit) :
+    RecyclerView.Adapter<CategoriesViewHolder>() {
     override fun onBindViewHolder(holder: CategoriesViewHolder, position: Int) {
         // crear una vista visual y montar esa vista
-        holder.render(categories[position])
+        holder.render(categories[position], onItemSelected)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CategoriesViewHolder {

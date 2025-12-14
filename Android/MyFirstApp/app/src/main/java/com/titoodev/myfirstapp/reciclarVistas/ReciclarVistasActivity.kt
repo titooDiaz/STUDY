@@ -1,5 +1,6 @@
 package com.titoodev.myfirstapp.reciclarVistas
 
+import android.annotation.SuppressLint
 import android.app.Dialog
 import android.os.Bundle
 import android.widget.Button
@@ -61,12 +62,12 @@ class ReciclarVistasActivity : AppCompatActivity() {
         // para que una vista reciclada funcione necesitamos crearle dos cosas:
         // 1. un adapatador: clase que va a conectar toda la informacion
         // 2. pintar la vista!!
-        categoriesAdapter = CategoriesAdapter(categories)
+        categoriesAdapter = CategoriesAdapter(categories) { position -> updateCategories(position) }
         recyclerBoxvar.layoutManager =LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
         recyclerBoxvar.adapter = categoriesAdapter
 
         // segundo recycler
-        taskAdapater = TaskAdapter(tasks)
+        taskAdapater = TaskAdapter(tasks, {onItemSelected(it)})
         recyclerBoxvar2.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
         recyclerBoxvar2.adapter = taskAdapater
 
@@ -83,6 +84,12 @@ class ReciclarVistasActivity : AppCompatActivity() {
         btnAddTask.setOnClickListener{
             showDialog()
         }
+    }
+
+    private fun updateCategories(position: Int){
+        categories[position].isSelected = !categories[position].isSelected
+        categoriesAdapter.notifyItemChanged(position)
+        updateTasks()
     }
 
     private fun showDialog(){
@@ -104,8 +111,26 @@ class ReciclarVistasActivity : AppCompatActivity() {
                     "personal"-> TaskCategory.Personal
                     else -> TaskCategory.Other
             }
+
+            tasks.add(Task(inputTask.text.toString(),currentCategory))
+            updateTasks()
+            dialog.hide()
         }
 
         dialog.show()
+    }
+
+    // funcion lambda ( mirar el TaskAdapter )
+    private fun onItemSelected(position:Int){
+        tasks[position].isSelected = !tasks[position].isSelected
+        updateTasks()
+    }
+
+    @SuppressLint("NotifyDataSetChanged")
+    private fun updateTasks(){
+        val selectedCategories: List<TaskCategory> = categories.filter { it.isSelected }
+        val newTasks = tasks.filter { selectedCategories.contains(it.category) }
+        taskAdapater.tasks = newTasks
+        taskAdapater.notifyDataSetChanged()
     }
 }
