@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.titoodev.myfirstapp.IMCAPP.IMCActivity
+import com.titoodev.myfirstapp.buscadorDeSuperHeroes.SuperHeroListActivity
 import com.titoodev.myfirstapp.primeraApp.PrimeraActivity
 import com.titoodev.myfirstapp.reciclarVistas.ReciclarVistasActivity
 
@@ -28,6 +29,10 @@ class MenuActivity : AppCompatActivity() {
         // tercer menu
         val btnNav3 = findViewById<Button>(R.id.botonnav3)
         btnNav3.setOnClickListener{navergarSaludo3()}
+
+        // cuarto menu
+        val btnNav4 = findViewById<Button>(R.id.botonnav4)
+        btnNav4.setOnClickListener{navergarSaludo4()}
     }
 
     fun navergarSaludo(){
@@ -41,6 +46,11 @@ class MenuActivity : AppCompatActivity() {
 
     fun navergarSaludo3(){
         val intent = Intent(this, ReciclarVistasActivity::class.java)
+        startActivity(intent)
+    }
+
+    fun navergarSaludo4(){
+        val intent = Intent(this, SuperHeroListActivity::class.java)
         startActivity(intent)
     }
 }

@@ -6,16 +6,19 @@
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/up"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@drawable/up"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyFirstApp"
         tools:targetApi="31">
         <activity
-            android:name=".reciclarVistas.ReciclarVistasActivity"
-            android:theme="@style/Theme.MySecondTheme"
+            android:name=".buscadorDeSuperHeroes.SuperHeroListActivity"
             android:exported="false" />
+        <activity
+            android:name=".reciclarVistas.ReciclarVistasActivity"
+            android:exported="false"
+            android:theme="@style/Theme.MySecondTheme" />
         <activity
             android:name=".IMCAPP.ResultActivity"
             android:exported="false" />

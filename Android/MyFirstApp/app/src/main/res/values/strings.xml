@@ -23,8 +23,8 @@
     <string name="title2">Primera app reutilizable</string>
     <string name="subtitle1">Primeras cartas</string>
     <string name="subtitle2">Segundas cartas</string>
-    
-<!--    inputs-->
+
+    <!--    inputs-->
     <string name="inputTask">Escribe tu tarea</string>
 
     <string name="negocios">negocios</string>
